@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import entties.Calculator;
 
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -12,17 +13,18 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Calculator calc = new Calculator();
+		// Como esse caso é constante (estático), então não é preciso instância o objeto
+		// Podemos usar somento o nome da classe
 		
 		System.out.print("Enter radius: ");
 		double radius = sc.nextDouble();
 		
-		double c = calc.circuference(radius);
-		double v = calc.volume(radius);
+		double c = Calculator.circuference(radius);
+		double v = Calculator.volume(radius);
 		
 		System.out.printf("Circumference: %.2f%n", c);
 		System.out.printf("Volume: %.2f%n", v);
-		System.out.printf("PI Value: %.2f%n", calc.PI);
+		System.out.printf("PI Value: %.2f%n", Calculator.PI);
 
 		sc.close();
 	}
